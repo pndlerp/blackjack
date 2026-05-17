@@ -11,14 +11,17 @@ public abstract class Hand {
     public void getStartCards(Deck deck){
         deck.giveCard(this);
         deck.giveCard(this);
+        countPoints();
     }
-    public void takeTurn(Deck deck){
-        deck.giveCard(this);
-    }
+    public abstract void takeCards(Deck deck);
+
 
     public void countPoints(){
         for(Card i : cards){
             points += i.getValue();
         }
+    }
+    public int getPoints(){
+        return points;
     }
 }
