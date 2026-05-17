@@ -21,7 +21,11 @@ public class Deck {
         }
     }
 
-    public void startCards(){
-
+    public Card giveCard(Hand hand){
+        return deck.removeFirst();
+    }
+    public void refreshDeck() throws Exception{
+        deck.clear();
+        createDeck();
     }
 }
