@@ -1,6 +1,6 @@
 package com.example.blackjack;
 
-public enum suits{
+public enum Suits {
     HEARTS,
     DIAMONDS,
     CLUBS,

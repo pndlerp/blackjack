@@ -4,32 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
-    private List<Hand> players;
+    private Player player;
+    private Dealer dealer;
     private Deck deck;
 
     public Table(){
-        players = new ArrayList<>();
-        players.add(new Player());
-        players.add(new Dealer());
-        deck = new Deck();
+
     }
-    public void start(){
-        Card takenCard = deck.giveCard();
-        for(Hand p : players){
-            p.getStartCards(takenCard);
-        }
+    public void startNewGame(){
+        player = new Player();
+        dealer = new Dealer();
+        deck = new Deck();
+
+        player.takeCard(deck.giveCard());
+        dealer.takeCard(deck.giveCard());
+        player.takeCard(deck.giveCard());
+        dealer.takeCard(deck.giveCard());
     }
 
-    public void hit(){
-        Card takenCard = deck.giveCard();
-        
+    public void hitPlayer(){
+        this.player.takeCard(deck.giveCard());
     }
-    public String toString(){
-        String result = "";
-        for(Hand p : players){
-             result += p.toString() + "\n";
+    public void hitDealer(){
+        if(this.dealer.getPoints()<=16) this.dealer.takeCard(deck.giveCard());
+    }
+
+    public String playerCards(){
+        return player.toString();
+    }
+    public String dealerCards(){
+        return dealer.toString();
+    }
+
+    public Person checkWinCondition(){
+        int pCount = player.getPoints();
+        int dCount = dealer.getPoints();
+        if((pCount > dCount && pCount <= 21) || (dCount > 21 && pCount <= 21) || (pCount == 21 && dCount != 21)){
+            return player;
         }
-        return result;
+        return dealer;
+    }
+
+    public String toString(){
+        return player + "\n" + dealer;
     }
 
 

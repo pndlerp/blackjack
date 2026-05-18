@@ -19,7 +19,7 @@ public class Deck {
     }
 
     public void createDeck() {
-        for (suits card : suits.values()) {
+        for (Suits card : Suits.values()) {
             for (int i = 0; i < 11; i++) {
                 deck.add(new Card(i + 1, card));
             }

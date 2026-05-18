@@ -1,10 +1,5 @@
 package com.example.blackjack;
 
-public class Dealer extends Hand {
+public class Dealer extends Person {
 
-
-    @Override
-    public boolean wantsToHit() {
-        return getPoints() < 17;
-    }
 }
