@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Hand {
-    private List<Card> cards = new ArrayList<>();
+    protected List<Card> cards = new ArrayList<>();
     private int points = 0;
 
 
     public void getStartCards(Deck deck){
-        deck.giveCard(this);
-        deck.giveCard(this);
+        cards.add(deck.giveCard());
+        cards.add(deck.giveCard());
         countPoints();
     }
     public abstract void takeCards(Deck deck);
@@ -23,5 +23,11 @@ public abstract class Hand {
     }
     public int getPoints(){
         return points;
+    }
+    public String toString(){
+        return "current cards: " + cards + "points: " + getPoints();
+    }
+    public List<Card> getCards(){
+        return cards;
     }
 }
