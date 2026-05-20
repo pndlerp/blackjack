@@ -40,15 +40,14 @@ public class Table {
 
     public boolean ifCanContinue(){
         int pCount = player.getPoints();
-        if(pCount >= 21) return false;
-        else return true;
+        return pCount < 21;
     }
 
     public GameResult checkWinCondition(){
         int pCount = player.getPoints();
         int dCount = dealer.getPoints();
         if(pCount == dCount && pCount < 22) return GameResult.DRAW;
-        if((pCount > dCount && pCount <= 21) || (dCount > 21 && pCount <= 21) || (pCount == 21 && dCount != 21)){
+        if((pCount > dCount && pCount <= 21) || (dCount > 21 && pCount <= 21)){
             return GameResult.PLAYER_WIN;
         }
         return GameResult.DEALER_WIN;
