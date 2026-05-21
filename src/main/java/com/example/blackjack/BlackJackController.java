@@ -1,11 +1,14 @@
 package com.example.blackjack;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.List;
 
 public class BlackJackController {
@@ -23,12 +26,12 @@ public class BlackJackController {
     @FXML
     protected void onStartButtonClick() {
 
+        playerCardsBox.setSpacing(15);
+        dealerCardsBox.setSpacing(15);
         menu.setVisible(false);
         table = new Table();
         table.startNewGame();
-        DealerCard1.setText(table.getDealerCard(0).toString());
-        PlayerCard1.setText(table.getPlayerCard(0).toString());
-        PlayerCard2.setText(table.getPlayerCard(1).toString());
+        UpdateUI();
 
         mainStage.setVisible(true);
 
@@ -38,8 +41,8 @@ public class BlackJackController {
     protected void onHitClick() {
         table.hitPlayer();
         UpdateUI();
-        if(table.ifCanContinue()){
-
+        if(!table.ifCanContinue()){
+            onStandClick();
         }
 
     }
@@ -59,25 +62,34 @@ public class BlackJackController {
     }
 
     @FXML
-    protected void UpdateUI() {
+    protected void UpdateUI()  {
         dealerCardsBox.getChildren().clear();
 
         List<Card> cards = table.getDealer().getCards();
 
-        for (Card c : cards) {
-            Text cardText = new Text(c.toString());
-            cardText.setStyle("-fx-border-color: black; -fx-padding: 5; -fx-font-size: 16;");
-            dealerCardsBox.getChildren().add(cardText);
-        }
+        CardsUI(cards, dealerCardsBox);
 
         playerCardsBox.getChildren().clear();
 
         List<Card> cards1 = table.getPlayer().getCards();
 
+        CardsUI(cards1, playerCardsBox);
+    }
+
+    private void CardsUI(List<Card> cards1, HBox playerCardsBox){
+        try {
         for (Card c : cards1) {
-            Text cardText = new Text(c.toString());
-            cardText.setStyle("-fx-border-color: black; -fx-padding: 5; -fx-font-size: 16;");
-            playerCardsBox.getChildren().add(cardText);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("card.fxml"));
+            Parent cardVisual = loader.load();
+            CardController controller = loader.getController();
+            controller.setCardData(c);
+            playerCardsBox.getChildren().add(cardVisual);
+//            Text cardText = new Text(c.toString());
+//            cardText.setStyle("-fx-border-color: black; -fx-padding: 5; -fx-font-size: 16;");
+//            playerCardsBox.getChildren().add(cardText);
+        }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
