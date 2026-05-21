@@ -31,6 +31,7 @@
                   </Text>
                </children>
             </HBox>
+            <VBox prefHeight="20.0" prefWidth="374.0" />
             <HBox fx:id="playerCardsBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text fx:id="PlayerCard1" strokeType="OUTSIDE" strokeWidth="0.0" text="">
