@@ -16,9 +16,7 @@ public class Table {
         dealer = new Dealer();
         deck = new Deck();
 
-        player.takeCard(deck.giveCard());
-        dealer.takeCard(deck.giveCard());
-        player.takeCard(deck.giveCard());
+
         dealer.setHiddenCard(deck.giveCard());
     }
 
