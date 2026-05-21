@@ -7,6 +7,6 @@ public class Dealer extends Person {
         this.hiddenCard = hiddenCard;
     }
     public void addHiddenCardToList(){
-        cards.add(hiddenCard);
+        getCards().add(hiddenCard);
     }
 }
