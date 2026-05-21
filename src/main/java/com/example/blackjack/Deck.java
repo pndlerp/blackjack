@@ -10,7 +10,7 @@ public class Deck {
 
     public Deck(){
         clearDeck();
-        createDeck();
+        createDeckForBlackjack();
         shuffle();
     }
 
@@ -30,6 +30,12 @@ public class Deck {
                 }
                 else deck.add(new Card(i, card));
             }
+        }
+    }
+
+    public void createDeckForBlackjack(){
+        for(int i=0; i<=6; i++){
+            createDeck();
         }
     }
 
