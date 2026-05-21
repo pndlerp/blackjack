@@ -15,7 +15,7 @@ The game features classic gameplay against a computer dealer, with no betting sy
 
 Here is a quick look at the gameplay:
 
-[Screencast_20260521_235813.webm](https://github.com/user-attachments/assets/4c728876-5b07-4355-87dc-7215caf2503b)
+<img width="640" height="474" alt="Screencast_21" src="https://github.com/user-attachments/assets/885de392-477d-4a04-937f-280b7dfb969e" />
 
 
 ## Tech Stack
