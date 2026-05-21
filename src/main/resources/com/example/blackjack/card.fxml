@@ -5,22 +5,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150" prefWidth="100" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.blackjack.CardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150" prefWidth="100" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 6;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.blackjack.CardController">
    <children>
       <VBox prefHeight="242.0" prefWidth="169.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text fx:id="rankLabel1" strokeType="OUTSIDE" strokeWidth="0.0" text="123" VBox.vgrow="ALWAYS">
                <VBox.margin>
-                  <Insets left="5.0" top="10.0" />
+                  <Insets left="6" top="6" />
                </VBox.margin>
             </Text>
             <VBox prefHeight="200.0" prefWidth="100.0" />
             <VBox alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="169.0">
                <children>
-                  <Text  fx:id="rankLabel2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" VBox.vgrow="ALWAYS">
+                  <Text fx:id="rankLabel2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" VBox.vgrow="ALWAYS">
                      <VBox.margin>
-                        <Insets right="5.0" bottom="10" />
+                        <Insets bottom="6" right="6" />
                      </VBox.margin>
                   </Text>
                </children>

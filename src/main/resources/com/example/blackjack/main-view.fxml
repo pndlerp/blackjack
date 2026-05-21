@@ -10,50 +10,44 @@
 
 <StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.blackjack.BlackJackController">
    <children>
-      <VBox fx:id="mainStage" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" visible="false">
+      <VBox fx:id="mainStage" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1d522a;" visible="false">
          <children>
-            <HBox fx:id="dealerCardsBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox  alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="DealerCard1" strokeType="OUTSIDE" strokeWidth="0.0">
-                     <HBox.margin>
-
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="DealerCard2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="DealerCard3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </Text>
+                  <HBox alignment="CENTER" prefHeight="89.0" prefWidth="66.0">
+                     <children>
+                        <Text fx:id="dealerScore" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: rgb(255 255 255 / 0);" text="Dealer Score" wrappingWidth="69.0">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox fx:id="dealerCardsBox" prefHeight="100.0" prefWidth="200.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></HBox>
                </children>
             </HBox>
             <VBox prefHeight="20.0" prefWidth="374.0" />
-            <HBox fx:id="playerCardsBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="PlayerCard1" strokeType="OUTSIDE" strokeWidth="0.0" text="">
-                     <HBox.margin>
-                        
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="PlayerCard2" strokeType="OUTSIDE" strokeWidth="0.0" text="">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="PlayerCard3" strokeType="OUTSIDE" strokeWidth="0.0" text="">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </Text>
+                  <HBox alignment="CENTER" prefHeight="89.0" prefWidth="66.0">
+                     <children>
+                        <Text fx:id="playerScore" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Score:" wrappingWidth="67.0">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="playerCardsBox" prefHeight="100.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onHitClick" text="Hit">
+                  <Button fx:id="hit" mnemonicParsing="false" onAction="#onHitClick" text="Hit">
                      <HBox.margin>
                      </HBox.margin>
                   </Button>
