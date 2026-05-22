@@ -12,7 +12,7 @@ The game features classic gameplay against a computer dealer, with no betting sy
 
 ## Demo Showcase
 
-[gameplay.webm](https://github.com/user-attachments/assets/6645138e-1e64-4926-9b7f-de43010efd23)
+![gameplay.webm](https://github.com/user-attachments/assets/6645138e-1e64-4926-9b7f-de43010efd23)
 
 
 ## Tech Stack
@@ -31,8 +31,11 @@ Make sure you have JDK 14 (or higher) installed. You can check your version by r
 Copy and run the following commands in your terminal:
 
 git clone https://github.com/Paerma/blackjack.git
+
 cd blackjack
+
 chmod +x mvnw
+
 ./mvnw clean javafx:run
 
 (Alternatively, you can just open this project in IntelliJ IDEA or Eclipse and run the Controller.java class directly)
